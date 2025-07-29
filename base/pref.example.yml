@@ -42,7 +42,7 @@ userinfo:
 node_pref:
 #  udp_flag: false
 #  tcp_fast_open_flag: false
-#  skip_cert_verify_flag: false
+  skip_cert_verify_flag: true
 #  tls13_flag: false
   sort_flag: false
   sort_script: ""
