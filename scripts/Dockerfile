@@ -35,7 +35,7 @@ RUN set -xe && \
     cmake -DCMAKE_CXX_STANDARD=11 . && \
     make install -j $THREADS && \
     cd .. && \
-    git clone https://github.com/tindy2013/subconverter --depth=1 && \
+    git clone https://github.com/pm100fun/subconverter-mod --depth=1 && \
     cd subconverter && \
     [ -n "$SHA" ] && sed -i 's/\(v[0-9]\.[0-9]\.[0-9]\)/\1-'"$SHA"'/' src/version.h;\
     python3 -m ensurepip && \
@@ -53,7 +53,7 @@ RUN apk add --no-cache --virtual subconverter-deps pcre2 libcurl yaml-cpp
 COPY --from=builder /subconverter/subconverter /usr/bin/
 COPY --from=builder /subconverter/base /base/
 
-ENV TZ=Africa/Abidjan
+ENV TZ=Asia/Shanghai
 RUN ln -sf /usr/share/zoneinfo/$TZ /etc/localtime
 RUN echo $TZ > /etc/timezone
 
