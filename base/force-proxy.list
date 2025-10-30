@@ -17,7 +17,7 @@ DOMAIN-SUFFIX,home-intl.console.aliyun.com
 # Google
 DOMAIN-SUFFIX,googleapis.cn
 
-// Telegram
+# Telegram
 DOMAIN-SUFFIX,t.me
 DOMAIN-SUFFIX,tdesktop.com
 DOMAIN-SUFFIX,telegra.ph
@@ -25,13 +25,13 @@ DOMAIN-SUFFIX,telegram.me
 DOMAIN-SUFFIX,telegram.org
 DOMAIN-SUFFIX,telesco.pe
 
-// Whatsapp
+# Whatsapp
 DOMAIN-SUFFIX,whatsapp.biz
 DOMAIN-SUFFIX,whatsapp.com
 DOMAIN-SUFFIX,whatsapp.net
 DOMAIN-KEYWORD,whatsapp
 
-// AI规则
+# AI规则
 DOMAIN-SUFFIX,openai.com
 DOMAIN-SUFFIX,chatgpt.com
 DOMAIN-SUFFIX,sora.com
