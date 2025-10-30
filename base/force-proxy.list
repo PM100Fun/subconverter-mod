@@ -1,3 +1,8 @@
+# General
+DOMAIN-SUFFIX,linkedin.com
+DOMAIN-SUFFIX,steamcommunity.com
+DOMAIN-SUFFIX,steampowered.com
+
 # Github
 DOMAIN-KEYWORD,github
 DOMAIN-SUFFIX,github.com
@@ -9,19 +14,30 @@ DOMAIN-SUFFIX,githubusercontent.com
 # 阿里云
 DOMAIN-SUFFIX,home-intl.console.aliyun.com
 
-# IP
-DOMAIN,ip.skk.moe
-DOMAIN,ip.sb
-
 # Google
 DOMAIN-SUFFIX,googleapis.cn
 
-# Airports
-DOMAIN-SUFFIX,maying.co 
-DOMAIN-SUFFIX,flowercloud.net 
-DOMAIN-SUFFIX,socloud.me 
-DOMAIN-SUFFIX,ytoo.asia 
-DOMAIN-SUFFIX,ytoo.co.uk
+// Telegram
+DOMAIN-SUFFIX,t.me
+DOMAIN-SUFFIX,tdesktop.com
+DOMAIN-SUFFIX,telegra.ph
+DOMAIN-SUFFIX,telegram.me
+DOMAIN-SUFFIX,telegram.org
+DOMAIN-SUFFIX,telesco.pe
 
-# General
-DOMAIN-SUFFIX,linkedin.com
+// Whatsapp
+DOMAIN-SUFFIX,whatsapp.biz
+DOMAIN-SUFFIX,whatsapp.com
+DOMAIN-SUFFIX,whatsapp.net
+DOMAIN-KEYWORD,whatsapp
+
+// AI规则
+DOMAIN-SUFFIX,openai.com
+DOMAIN-SUFFIX,chatgpt.com
+DOMAIN-SUFFIX,sora.com
+DOMAIN-SUFFIX,claude.ai
+DOMAIN-SUFFIX,perplexity.ai
+DOMAIN-SUFFIX,anthropic.com
+DOMAIN-SUFFIX,auth0.com
+DOMAIN-SUFFIX,grok.com
+
