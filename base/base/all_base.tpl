@@ -1,15 +1,33 @@
 {% if request.target == "clash" or request.target == "clashr" %}
 
 port: {{ default(global.clash.http_port, "7890") }}
-socks-port: {{ default(global.clash.socks_port, "7891") }}
-allow-lan: {{ default(global.clash.allow_lan, "true") }}
-mode: Rule
-log-level: {{ default(global.clash.log_level, "info") }}
+allow-lan: {{ default(global.clash.allow_lan, "false") }}
+mode: rule
+log-level: {{ default(global.clash.log_level, "warning") }}
 external-controller: {{ default(global.clash.external_controller, "127.0.0.1:9090") }}
+
+clash-for-android:
+  append-system-dns: false
+unified-delay: true
+keep-alive-interval: 360
+hosts:
+  mtalk.google.com: 108.177.125.188
+  raw.githubusercontent.com: 151.101.76.133
+
 {% if default(request.clash.dns, "") == "1" %}
 dns:
   enable: true
-  listen: :1053
+  ipv6: true
+  listen: '127.0.0.1:5334'
+  default-nameserver: [180.184.1.1, 119.29.29.29, 223.5.5.5]
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  use-hosts: true
+  nameserver-policy: { +.pphimalayanrt.com: 223.5.5.5, st.dl.eccdnx.com: 223.5.5.5, +.tmall.com: 223.5.5.5, +.taobao.com: 223.5.5.5, +.alicdn.com: 223.5.5.5, +.aliyun.com: 223.5.5.5, +.alipay.com: 223.5.5.5, +.2025windows.vip: 'tls://112.74.48.57:10853', +.alibaba.com: 223.5.5.5, +.qq.com: 119.29.29.29, +.tencent.com: 119.29.29.29, +.weixin.com: 119.29.29.29, +.qpic.cn: 119.29.29.29, +.jd.com: 119.29.29.29, +.bilibili.com: 119.29.29.29, +.hdslb.com: 119.29.29.29, +.163.com: 119.29.29.29, +.126.com: 119.29.29.29, +.126.net: 119.29.29.29, +.127.net: 119.29.29.29, +.netease.com: 119.29.29.29, +.baidu.com: 223.5.5.5, +.bdstatic.com: 223.5.5.5, +.bilivideo.+: 119.29.29.29, +.iqiyi.com: 119.29.29.29, +.douyinvod.com: 180.184.1.1, +.douyin.com: 180.184.1.1, +.douyincdn.com: 180.184.1.1, +.douyinpic.com: 180.184.1.1, +.feishu.cn: 180.184.1.1 }
+  nameserver: ['https://doh.pub/dns-query', 'https://dns.alidns.com/dns-query', 'tls://223.5.5.5:853', 'https://223.6.6.6/dns-query', 'https://120.53.53.53/dns-query']
+  fallback: ['https://doh.pub/dns-query', 'https://dns.alidns.com/dns-query', 'https://101.101.101.101/dns-query', 'https://208.67.220.220/dns-query', 'https://doh.mullvad.net/dns-query']
+  fallback-filter: { geoip: true, ipcidr: [240.0.0.0/4, 0.0.0.0/32, 223.75.236.241/32, 182.43.124.6/32, 106.74.25.198/32, 183.192.65.101/32], domain: [+.google.cn, +.jsdelivr.net, +.proton.me] }
+
 {% endif %}
 {% if local.clash.new_field_name == "true" %}
 proxies: ~
